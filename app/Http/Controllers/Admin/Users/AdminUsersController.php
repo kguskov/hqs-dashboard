@@ -29,6 +29,8 @@ final class AdminUsersController extends AdminBaseController
         $statuses = $this->getStatuses();
         $roles = $this->getRoles();
         return view('admin.users.index', compact('users', 'statuses', 'roles'));
+
+
     }
 
     public function store(AdminUsersStoreRequest $request)

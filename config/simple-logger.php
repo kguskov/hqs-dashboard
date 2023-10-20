@@ -3,7 +3,7 @@ return [
     /*
      * Enable/disable logging
      */
-    'enable' => true,
+    'enable' => false,
 
     /*
      * Filter out body fields which will never be logged.

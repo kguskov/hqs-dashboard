@@ -2,9 +2,6 @@
 <div class="page-main-header open">
     <div class="main-header-right row">
         <div class="main-header-left d-lg-none">
-            {{-- Logo --}}
-            {{-- <div class="logo-wrapper"><a href="/"><img src="{{asset('assets/images/logo.png')}}" alt=""></a></div> --}}
-            {{-- Logo --}}
         </div>
         <div class="mobile-sidebar">
             <div class="media-body text-right switch-sm">
@@ -14,7 +11,7 @@
         <div class="nav-right col p-0">
             <ul class="nav-menus">
                 <li></li>
-                {{--        Language dropdown --}}
+                {{-- Language dropdown --}}
                 <li class="onhover-dropdown"><a class="txt-dark" href="#">
                         <h6>{{ App::isLocale('en') ? "EN" : "RU" }}</h6></a>
                     <ul class="language-dropdown onhover-show-div p-20">

@@ -22,12 +22,14 @@ final class AdminRoutesProvider
             Route::resources([
                 'users' => AdminUsersController::class,
             ]);
-            Route::redirect('/', 'dashboard');
-            Route::view('profile', AdminRoutes::ADMIN_PROFILE)->name('profile');
+//            Route::redirect('/', 'dashboard');
+            Route::view('profile', AdminRoutes::ADMIN_PROFILE)
+                ->name('profile');
+
+            Route::get('dashboard', [AdminDashboardIndexController::class, 'index'])
+                ->name(AdminRoutes::ADMIN_DASHBOARD);
 
         });
-        Route::get('{locale}/admin/dashboard', AdminDashboardIndexController::class)
-            ->name(AdminRoutes::ADMIN_DASHBOARD)
-            ->middleware('auth','admin', 'log');
+
     }
 }

@@ -164,7 +164,6 @@ class AdminUsersControllerUpdateTest extends TestCase
 
     public function testUpdatePostRequestCorrectlyAsActiveAdmin()
     {
-
         $user = UsersGenerator::generateActiveAdmin();
         $userUpdateData = UsersGenerator::generateUpdateUserData();
         $userNewData = $userUpdateData;

@@ -35,7 +35,7 @@ class UsersTableSeeder extends Seeder
     {
         User::factory()->times(10)->create()
             ->each(function($user){
-            $user->role->name = Role::ROLE_USER,
+            $user->role->name = Role::ROLE_USER;
         });
     }
 

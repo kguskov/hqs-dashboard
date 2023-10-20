@@ -7,22 +7,20 @@
 
 @section('breadcrumb-title', __('messages.pages.documents.documents') )
 @section('breadcrumb-item')
-<li class="breadcrumb-item active">{{ __('messages.pages.documents.documents')}}</li>
+    <li class="breadcrumb-item active">{{ __('messages.pages.documents.documents')}}</li>
 @endsection
 
 @section('body')
-<!-- Container-fluid starts-->
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-12">
+    <!-- Container-fluid starts-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
 
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-<!-- Container-fluid Ends-->
-
+    <!-- Container-fluid Ends-->
 @endsection
 
 @section('script')
-
 @endsection

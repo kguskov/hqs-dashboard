@@ -24,7 +24,6 @@ class CreateRoleUserTable extends Migration
                     ->references('id')
                     ->on('roles')
                     ->onDelete("cascade");
-
             $table->primary(['user_id','role_id']);
         });
     }

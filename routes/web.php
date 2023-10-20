@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,14 @@ Route::get('/', function () {
 Route::prefix('{locale}')->group(function () {
     Auth::routes();
 });
+
+//Route::prefix('{locale}')->group(function () {
+//    Route::get('admin/dashboard', 'AdminDashboardIndexController@index');
+//});
+
+//Route::prefix('{locale}')->get('any', function () {
+//    return view('app');
+//})->where('any', '.*');
 
 // Users Route Group
 app(\App\Services\Routes\Providers\User\UserRoutesProvider::class)->registerRoutes();

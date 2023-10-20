@@ -25,8 +25,6 @@ class CreateAbilityRoleTable extends Migration
                 ->references('id')
                 ->on('abilities')
                 ->onDelete("cascade");
-
-//            $table->primary(['role_id','ability_id']);
         });
     }
 

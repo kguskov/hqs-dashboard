@@ -7,19 +7,19 @@
 
 @section('breadcrumb-title', __('messages.pages.knowledgebase') )
 @section('breadcrumb-item')
-<li class="breadcrumb-item active">{{ __('messages.pages.knowledgebase')}}</li>
+    <li class="breadcrumb-item active">{{ __('messages.pages.knowledgebase')}}</li>
 @endsection
 
 @section('body')
-<!-- Container-fluid starts-->
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-12">
+    <!-- Container-fluid starts-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
 
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-<!-- Container-fluid Ends-->
+    <!-- Container-fluid Ends-->
 
 @endsection
 

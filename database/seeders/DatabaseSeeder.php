@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
     {
         // Create Roles Table
         $this->call([RolesTableSeeder::class]);
-        // Creat Abilities Table
+        // Create Abilities Table
         $this->call([AbilitiesTableSeeder::class]);
         // Create 10 Companies
         Company::factory(10)->create();
@@ -47,11 +47,6 @@ class DatabaseSeeder extends Seeder
                 DB::table('company_user')->insert([
                     'user_id' => $user->id,
                     'inn' => $company->inn]);
-                //Seeding role_user pivot table
-//                DB::table('role_user')->insert([
-//                    'user_id' => $user->id,
-//                    'role_id' => rand(1,3)
-//                ]);
             }
         }
         foreach (Role::all() as $role) {

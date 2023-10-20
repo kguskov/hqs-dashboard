@@ -39,7 +39,9 @@ class Localization
             App::setLocale(config('app.fallback_locale'));
             return redirect()->to(config('app.fallback_locale') . $path);
         }
+
         $this->setAppLocale($locale);
+
         $this->removeParamLocaleFromRequest($request);
 
         return $next($request);
