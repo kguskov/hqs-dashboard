@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Policies\Ability;
 use App\Services\Users\Repositories\EloquentUserRepository;
 use App\Services\UsersService;
+use Illuminate\Auth\Access\AuthorizationException;
 
 final class AdminUsersController extends AdminBaseController
 {
@@ -22,18 +23,23 @@ final class AdminUsersController extends AdminBaseController
         $this->usersService = $usersService;
     }
 
+    /**
+     * @throws AuthorizationException
+     */
     public function index()
     {
         $this->authorize(Ability::VIEW_ANY, User::class);
         $users = $this->usersService->paginateUsers(self::DEFAULT_MODELS_PER_PAGE);
         $statuses = $this->getStatuses();
         $roles = $this->getRoles();
+
         return view('admin.users.index', compact('users', 'statuses', 'roles'));
-
-
     }
 
-    public function store(AdminUsersStoreRequest $request)
+    /**
+     * @throws AuthorizationException
+     */
+    public function store(AdminUsersStoreRequest $request): \Illuminate\Http\JsonResponse
     {
         $this->authorize(Ability::STORE, User::class);
         $user = $this->usersService->createUser($request->getFormData());
@@ -41,7 +47,10 @@ final class AdminUsersController extends AdminBaseController
         return response()->json($user);
     }
 
-    public function show($id)
+    /**
+     * @throws AuthorizationException
+     */
+    public function show($id): \Illuminate\Http\JsonResponse
     {
         $this->authorize(Ability::VIEW, User::class);
         $user = $this->usersService->findUserWithRelations($id);
@@ -49,7 +58,10 @@ final class AdminUsersController extends AdminBaseController
         return response()->json($user);
     }
 
-    public function update($id, AdminUsersUpdateRequest $request)
+    /**
+     * @throws AuthorizationException
+     */
+    public function update($id, AdminUsersUpdateRequest $request): \Illuminate\Http\JsonResponse
     {
         $this->authorize(Ability::UPDATE, User::class);
         $user = $this->usersService->updateUser($id, $request->getFormUpdateData());
@@ -57,7 +69,10 @@ final class AdminUsersController extends AdminBaseController
         return response()->json($user);
     }
 
-    public function destroy($id)
+    /**
+     * @throws AuthorizationException
+     */
+    public function destroy($id): \Illuminate\Http\JsonResponse
     {
         $this->authorize(Ability::DELETE, User::class);
         $user = $this->usersService->deleteUser($id);
